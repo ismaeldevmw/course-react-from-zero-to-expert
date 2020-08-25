@@ -1,3 +1,7 @@
-import { heroes } from './data/heroes';
+import React from 'react';
+import ReactDOM from 'react-dom'
 
-console.log(heroes);
+const greeting = <h1>Hello World</h1>;
+const divRoot = document.querySelector('#root');
+
+ReactDOM.render( greeting, divRoot);

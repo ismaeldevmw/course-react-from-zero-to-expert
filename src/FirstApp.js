@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 // import React, { Fragment } from 'react'
 
 // Functional Components
-const FirstApp = ({ greeting }) => {  
+const FirstApp = ({ greeting, subtitle }) => {  
 
   return (
     <>
       <h1>{ greeting }</h1>      
-      <p>My first application</p>
+      <p> { subtitle } </p>
     </>
   );
 
@@ -16,6 +16,10 @@ const FirstApp = ({ greeting }) => {
 
 FirstApp.propTypes = {
   greeting: PropTypes.string.isRequired
+}
+
+FirstApp.defaultProps = {
+  subtitle: 'Im a subtitle'
 }
 
 export default FirstApp;

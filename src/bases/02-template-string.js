@@ -3,10 +3,10 @@ const lastName = 'Lopez';
 
 const fullName = `${name} ${lastName}`;
 
-console.log(fullName);
+// console.log(fullName);
 
-function getGreetings(name) {
-  return 'Hello ' + name;
+export function getGreetings(name = 'Carlos') {
+  return 'Hello ' + name + '!';
 }
 
-console.log(`The text is: ${getGreetings('Ismael')}`);
+// console.log(`The text is: ${getGreetings('Ismael')}`);

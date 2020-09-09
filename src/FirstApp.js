@@ -5,21 +5,21 @@ import PropTypes from 'prop-types';
 // Functional Components
 const FirstApp = ({ greeting, subtitle }) => {  
 
-  return (
+    return (
     <>
-      <h1>{ greeting }</h1>      
-      <p> { subtitle } </p>
+        <h1>{ greeting }</h1>      
+        <p> { subtitle } </p>
     </>
-  );
+    );
 
 }
 
 FirstApp.propTypes = {
-  greeting: PropTypes.string.isRequired
+    greeting: PropTypes.string.isRequired
 }
 
 FirstApp.defaultProps = {
-  subtitle: 'Im a subtitle'
+    subtitle: 'Im a subtitle'
 }
 
 export default FirstApp;

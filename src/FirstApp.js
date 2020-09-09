@@ -8,7 +8,7 @@ const FirstApp = ({ greeting, subtitle }) => {
     return (
     <>
         <h1>{ greeting }</h1>      
-        <p> { subtitle } </p>
+        <p>{ subtitle }</p>
     </>
     );
 

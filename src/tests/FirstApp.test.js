@@ -16,9 +16,28 @@ describe('Tests into <FirstApp />', () => {
 
     test('should show <FirstApp /> properly', () => {
 
-        const wrapper = shallow( <FirstApp greeting="Hello! I am Goku" /> );
+        const greeting = 'Hello! I am Goku';
+        const wrapper = shallow( <FirstApp greeting={ greeting } /> );
 
         expect( wrapper ).toMatchSnapshot();
+
+    });
+
+    test('should show the subtitle sended by props', () => {
+        
+        const greeting = 'Hello! I am Goku';
+        const subTitle = 'Hello! I am Goku';
+
+        const wrapper = shallow( 
+            <FirstApp 
+                greeting={ greeting }
+                subtitle={ subTitle }
+            /> 
+        );
+
+        const paragraphText = wrapper.find('p').text();
+
+        expect( paragraphText ).toBe( subTitle );
 
     });
 

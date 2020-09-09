@@ -7,6 +7,7 @@
 
 # testing
 /coverage
+src/tests/__snapshots__/FirstApp.test.js.snap
 
 # production
 /build

@@ -1,7 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 
-const greeting = <h1>Hello World</h1>;
-const divRoot = document.querySelector('#root');
+import GifExpertApp from './components/GifExpertApp';
+import './index.css';
 
-ReactDOM.render( greeting, divRoot);
+ReactDOM.render( 
+    <GifExpertApp />, 
+    document.querySelector('#root')
+);

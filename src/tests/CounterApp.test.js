@@ -34,13 +34,25 @@ describe('Tests into <CounterApp />', () => {
 
     });
 
-    test('should dismiss with the button -1', () => {
+    test('should decrease with the button -1', () => {
         
         wrapper.find('button').first().simulate('click');
         const counterText = wrapper.find('h2').text().trim();
-        console.log(counterText);
         expect( counterText ).toBe('9');
 
+    });
+
+    test('should show default value with the button "Reset"', () => {
+        
+        const wrapper = shallow( <CounterApp value={ 105 }/> );
+
+        wrapper.find('button').at(2).simulate('click');
+        wrapper.find('button').at(2).simulate('click');
+        wrapper.find('button').at(1).simulate('click');
+
+        const counterText =  wrapper.find('h2').text().trim();
+        
+        expect( counterText ).toBe('105');
     });
 
 });

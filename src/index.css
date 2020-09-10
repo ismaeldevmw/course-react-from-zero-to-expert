@@ -2,3 +2,9 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
 }
+
+input {
+    width: 100%;
+    color: gray;
+    font-size: 1.2em;
+}

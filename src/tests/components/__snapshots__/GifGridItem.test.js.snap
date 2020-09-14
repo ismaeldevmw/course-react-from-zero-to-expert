@@ -7,8 +7,13 @@ exports[`Tests into <GifGridItem /> should show <GifGridItem /> alright 1`] = `
   <div
     className="card__body"
   >
-    <img />
-    <p />
+    <img
+      alt="The title"
+      src="https://localhost/image.jpg"
+    />
+    <p>
+      The title
+    </p>
   </div>
 </div>
 `;

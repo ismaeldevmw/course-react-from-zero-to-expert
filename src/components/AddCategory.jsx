@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { useState } from 'react'
+import { useState } from 'react';
 
 export const AddCategory = ({ setCategories }) => {
     const [inputValue, setInputValue] = useState('');

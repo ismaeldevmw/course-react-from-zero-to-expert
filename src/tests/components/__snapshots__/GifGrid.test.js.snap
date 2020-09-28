@@ -1,25 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests into GifGrid component should show items when load imagen with useFetchGifs 1`] = `
-<Fragment>
-  <h3>
-     
-    One Punch
-     
-  </h3>
-  <div
-    className="card-grid"
-  >
-    <GifGridItem
-      id="ABC"
-      key="ABC"
-      title="Anything"
-      url="https://localhosy/anything/thing.jpg"
-    />
-  </div>
-</Fragment>
-`;
-
 exports[`Tests into GifGrid component should show the component alright 1`] = `
 <Fragment>
   <h3>

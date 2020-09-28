@@ -32,8 +32,10 @@ describe('Tests into GifGrid component', () => {
             loading: false
         });
         
-        const wrapper = shallow(<GifGrid category="One Punch" />)
-        expect(wrapper).toMatchSnapshot();
+        const wrapper = shallow(<GifGrid category="One Punch" />);
+
+        expect( wrapper.find('p').exists() ).toBe(false);
+        expect( wrapper.find('GifGridItem').length ).toBe( gifs.length );
 
     });
 });

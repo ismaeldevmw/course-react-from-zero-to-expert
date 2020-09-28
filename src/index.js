@@ -1,7 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import { HooksApp } from './HooksApp';
 
-const greeting = <h1>Hello World</h1>;
-const divRoot = document.querySelector('#root');
-
-ReactDOM.render( greeting, divRoot);
+ReactDOM.render( 
+    <HooksApp />, 
+    document.querySelector('#root')
+);

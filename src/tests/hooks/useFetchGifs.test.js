@@ -1,14 +1,28 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { useFetchGifs } from '../../hooks/useFetchGifs';
 
-describe('Tests in hook useFetchGigs', () => {
+describe('Tests in hook useFetchGifs', () => {
     
-    test('should  return the initial state', () => {
+    test('should  return the initial state', async() => {
 
-        const { result } = renderHook( () => useFetchGifs('One Punch') );
+        const { result, waitForNextUpdate } = renderHook( () => useFetchGifs('One Punch') );
         const { data, loading } = result.current;
         
-        expect( data ).toEquals([]);
+        await waitForNextUpdate();
+
+        expect( data ).toEqual([]);
+        expect( loading ).toBe(true);
+
+    });
+
+    test('should return an array of images and the loading variable  with value false', async() => {
+        
+        const { result, waitForNextUpdate } = renderHook( () => useFetchGifs('One Punch') );
+        await waitForNextUpdate();
+
+        const { data, loading } = result.current;
+
+        expect( data.length ).toBe(10);
         expect( loading ).toBe(false);
 
     });

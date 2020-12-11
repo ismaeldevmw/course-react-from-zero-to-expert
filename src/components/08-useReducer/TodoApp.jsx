@@ -27,6 +27,16 @@ export const TodoApp = () => {
         localStorage.setItem('tasks', JSON.stringify( taskToDo ));
     }, [ taskToDo ])
 
+    const handleDelete = ( taskId ) => {
+
+        const action = {
+            type: 'delete',
+            payload: taskId
+        }
+
+        dispatch( action )
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -43,7 +53,7 @@ export const TodoApp = () => {
             payload: newTask
         }
 
-        dispatch( action);
+        dispatch( action );
         reset();
     }
 
@@ -62,7 +72,7 @@ export const TodoApp = () => {
                                     className="list-group-item d-flex justify-content-between align-items-center"
                                 >
                                     { i + 1}. { task.description }
-                                    <button className="btn btn-sm btn-danger">Delete</button>
+                                    <button onClick={ () => handleDelete(task.id) } className="btn btn-sm btn-danger">Delete</button>
                                 </li>
                             ))
                         }

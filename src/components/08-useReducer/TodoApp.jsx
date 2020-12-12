@@ -3,6 +3,8 @@ import { todoReducer } from './todoReducer';
 import { useForm } from '../../hooks/useForm';
 
 import './styles.css';
+import { TodoListItem } from './TodoListItem';
+import { TodoList } from './TodoList';
 
 const init = () => {
 
@@ -17,15 +19,15 @@ const init = () => {
 
 export const TodoApp = () => {
 
-    const [ taskToDo, dispatch ] = useReducer(todoReducer, [], init);
+    const [ tasksToDo, dispatch ] = useReducer(todoReducer, [], init);
 
     const [{ description }, handleInputChange, reset] = useForm({
         description: ''
     });
 
     useEffect( () => {
-        localStorage.setItem('tasks', JSON.stringify( taskToDo ));
-    }, [ taskToDo ])
+        localStorage.setItem('tasks', JSON.stringify( tasksToDo ));
+    }, [ tasksToDo ])
 
     const handleDelete = ( taskId ) => {
 
@@ -68,29 +70,16 @@ export const TodoApp = () => {
 
     return (
         <div>
-            <h1>TodoApp ({ taskToDo.length })</h1>
+            <h1>TodoApp ({ tasksToDo.length })</h1>
             <hr/>
 
             <div className="row">
                 <div className="col-7">
-                    <ul className="list-group">
-                        {
-                            taskToDo.map( (task, i) => (
-                                <li
-                                    key={ task.id }
-                                    className="list-group-item d-flex justify-content-between align-items-center"
-                                >
-                                    <span
-                                        className={ `${ task.done && 'complete' }` } 
-                                        onClick={ () => handleToggle( task.id ) } 
-                                    >
-                                        { i + 1}. { task.description }
-                                    </span>
-                                    <button onClick={ () => handleDelete(task.id) } className="btn btn-sm btn-danger">Delete</button>
-                                </li>
-                            ))
-                        }
-                    </ul>
+                    <TodoList 
+                        tasks={ tasksToDo } 
+                        handleToggle={ handleToggle } 
+                        handleDelete={ handleDelete } 
+                    />
                 </div>
                 <div className="col-5">
                     <h4>Add task</h4>

@@ -3,7 +3,6 @@ import { todoReducer } from './todoReducer';
 import { useForm } from '../../hooks/useForm';
 
 import './styles.css';
-import { TodoListItem } from './TodoListItem';
 import { TodoList } from './TodoList';
 
 const init = () => {

@@ -17,7 +17,7 @@ export const LoginScreen = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        dispatch( startLoginEmailPassword(12345, 'Ismael') );
+        dispatch( startLoginEmailPassword( email, password) );
     }
 
     const handleGoogleLogin = () => {

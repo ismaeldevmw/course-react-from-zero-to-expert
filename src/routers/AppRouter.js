@@ -4,7 +4,7 @@ import {
     Switch,
     Route,
     Redirect
-  } from 'react-router-dom';
+} from 'react-router-dom';
 
 import { AuthRouter } from './AuthRouter';
 import { JournalScreen } from '../components/journal/JournalScreen';
